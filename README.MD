@@ -1,1 +1,1 @@
-LEARNING GO RestFul API
+LEARNING GO RESTful API BY Udemy course
