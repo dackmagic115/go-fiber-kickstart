@@ -1,14 +1,17 @@
 package database
 
 import (
+	"github.com/dackmagic115/go-fiber-kickstart/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
 func Connect() {
-	_, err := gorm.Open(mysql.Open("user:root@tcp(127.0.0.1:3306)/db"), &gorm.Config{})
+	database, err := gorm.Open(mysql.Open("user:root@tcp(127.0.0.1:3306)/db"), &gorm.Config{})
 
 	if err != nil {
 		panic("Could not connect to the database")
 	}
+
+	database.AutoMigrate(&models.User{})
 }
