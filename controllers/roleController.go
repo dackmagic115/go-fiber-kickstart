@@ -8,7 +8,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func AllRole(c *fiber.Ctx) error {
+func AllRoles(c *fiber.Ctx) error {
 	var role []models.Role
 
 	database.DB.Find(&role)
