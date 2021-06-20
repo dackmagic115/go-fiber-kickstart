@@ -18,4 +18,5 @@ func main() {
 	routes.Setup(app)
 
 	app.Listen(":3000")
+
 }
