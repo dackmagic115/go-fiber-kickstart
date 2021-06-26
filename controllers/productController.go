@@ -1,35 +1,18 @@
 package controllers
 
 import (
-	"math"
 	"strconv"
 
 	"github.com/dackmagic115/go-fiber-kickstart/database"
 	"github.com/dackmagic115/go-fiber-kickstart/models"
+	"github.com/dackmagic115/go-fiber-kickstart/util"
 	"github.com/gofiber/fiber/v2"
 )
 
 func AllProducts(c *fiber.Ctx) error {
 	page, _ := strconv.Atoi(c.Query("page", "1"))
 
-	limit := 5
-	offset := (page - 1) * limit
-	var total int64
-
-	var products []models.Product
-
-	database.DB.Offset(offset).Limit(limit).Find(&products)
-
-	database.DB.Model(&models.Product{}).Count(&total)
-
-	return c.JSON(fiber.Map{
-		"data": products,
-		"meta": fiber.Map{
-			"total":     total,
-			"page":      page,
-			"Last_page": math.Ceil(float64(int(total) / limit)),
-		},
-	})
+	return c.JSON(util.Paginate(database.DB, &models.Product{}, page))
 }
 
 func CreateProduct(c *fiber.Ctx) error {
