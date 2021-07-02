@@ -19,7 +19,7 @@ class Register extends Component {
           e.preventDefault()
 
 
-          await axios.post("http://localhost:3000/api/register", {
+          await axios.post("register", {
                first_name: this.first_name,
                last_name: this.last_name,
                email: this.email,
