@@ -12,13 +12,13 @@ const Users = () => {
    useEffect(() => {
       (
          async () => {
-            const { data } = await axios.get('user')
+            const { data } = await axios.get(`user?page=${page}`)
 
             setUsers(data.data)
             setLastPage(data.meta.last_page)
          }
       )()
-   }, [])
+   }, [page])
 
    const next = () => {
       if (page <= lastPage) {
@@ -82,6 +82,16 @@ const Users = () => {
                </tbody>
             </table>
          </div>
+         <nav>
+            <ul className="pagination">
+               <li className="page-item">
+                  <a href="#" className="page-link" onClick={prev}>Previous</a>
+               </li>
+               <li className="page-item">
+                  <a href="#" className="page-link" onClick={next}>Next</a>
+               </li>
+            </ul>
+         </nav>
       </Wrapper>
    )
 
