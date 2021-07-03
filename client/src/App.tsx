@@ -9,6 +9,10 @@ import UserCreate from './pages/users/UserCreate';
 import UserEdit from './pages/users/UserEdit';
 import Roles from './pages/roles/Roles';
 import RoleCreate from './pages/roles/RoleCreate';
+import RoleEdit from './pages/roles/RoleEdit';
+import ProductCreate from './pages/products/ProductCreate';
+import Products from './pages/products/products';
+import ProductEdit from './pages/products/ProductEdit';
 
 function App() {
   return (
@@ -22,7 +26,10 @@ function App() {
         <Route path={'/users/:id'} exact component={UserEdit} />
         <Route path={'/roles'} exact component={Roles} />
         <Route path={'/roles/create'} exact component={RoleCreate} />
-
+        <Route path={'/roles/:id'} exact component={RoleEdit} />
+        <Route path={'/products'} exact component={Products} />
+        <Route path={'/products/create'} exact component={ProductCreate} />
+        <Route path={'/products/:id'} exact component={ProductEdit} />
       </BrowserRouter>
     </div>
   );

@@ -3,8 +3,6 @@ import React, { SyntheticEvent, useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import Wrapper from '../../components/Wrapper'
 import { Permission } from '../../models/permission'
-import { Role } from '../../models/role'
-import { Permission } from './../../models/permission';
 
 const RoleEdit = (props: any) => {
    const [name, setName] = useState('')
@@ -85,4 +83,4 @@ const RoleEdit = (props: any) => {
 }
 
 
-export default RoleCreate
+export default RoleEdit
