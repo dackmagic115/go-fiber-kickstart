@@ -16,7 +16,7 @@ const Wrapper = (props: any) => {
                setRedirect(true)
             }
          }
-      )
+      )()
    })
 
    if (redirect) {
