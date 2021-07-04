@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Paginator from '../../components/Paginator'
 import Wrapper from '../../components/Wrapper'
 import { Role } from '../../models/role'
-import { Product } from './../../models/product';
+import { Product } from '../../models/product';
 
 const Products = () => {
 
